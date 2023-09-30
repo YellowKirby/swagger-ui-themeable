@@ -1,0 +1,32 @@
+{
+  "name": "swagger-ui-themeable",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/swagger-ui.css",
+    "./*": "./dist/scss/*"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "cssnano": "^6.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.1.4",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "tachyons-sass": "^4.9.5",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
