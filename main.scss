@@ -1,464 +1,230 @@
-$black: var(--swagger-ui-color-black, #000);
-$white: var(--swagger-ui-color-white, #fff);
-$gray-50: var(--swagger-ui-color-gray-50, #ebebeb);
-$gray-200: var(--swagger-ui-color-gray-200, #a0a0a0);
-$gray-300: var(--swagger-ui-color-gray-300, #909090);
-$gray-400: var(--swagger-ui-color-gray-400, #808080);
-$gray-500: var(--swagger-ui-color-gray-500, #707070);
-$gray-600: var(--swagger-ui-color-gray-600, #606060);
-$gray-650: var(--swagger-ui-color-gray-650, #555555);
-$gray-700: var(--swagger-ui-color-gray-700, #505050);
-$gray-800: var(--swagger-ui-color-gray-800, #404040);
-$gray-900: var(--swagger-ui-color-gray-900, #303030);
-$cod-gray: var(--swagger-ui-color-cod-gray, #1b1b1b);
-$agate-gray: var(--swagger-ui-color-agate-gray, #333333);
-$bright-gray: var(--swagger-ui-color-bright-gray, #3b4151);
-$mako-gray: var(--swagger-ui-color-mako-gray, #41444e);
-$waterloo-gray: var(--swagger-ui-color-waterloo-gray, #7d8492);
-$alto-gray: var(--swagger-ui-color-alto-gray, #d9d9d9);
-$mercury-gray: var(--swagger-ui-color-mercury-gray, #e4e4e4);
-$concrete-gray: var(--swagger-ui-color-concrete-gray, #e8e8e8);
-$alabaster: var(--swagger-ui-color-alabaster, #f7f7f7);
-$apple-green: var(--swagger-ui-color-apple-green, #62a03f);
-$green-haze: var(--swagger-ui-color-green-haze, #009d77);
-$japanese-laurel: var(--swagger-ui-color-japanese-laurel, #008000);
-$persian-green: var(--swagger-ui-color-persian-green, #00a0a7);
-$geyser-blue: var(--swagger-ui-color-geyser-blue, #d8dde7);
-$dodger-blue: var(--swagger-ui-color-dodger-blue, #1391ff);
-$endeavour-blue: var(--swagger-ui-color-endeavour-blue, #005dae);
-$scampi-purple: var(--swagger-ui-color-scampi-purple, #55a);
-$electric-violet: var(--swagger-ui-color-electric-violet, #7300e5);
-$persian-red: var(--swagger-ui-color-persian-red, #cf3030);
-$mango-tango: var(--swagger-ui-color-mango-tango, #e97500);
+// Base Colours
+$black: var(--swagger-ui-black, #000 );
+$white: var(--swagger-ui-white, #fff );
+$gray-50: var(--swagger-ui-gray-50, color-mix(in srgb, $black, white 92%) ); //ebebeb
+$gray-200: var(--swagger-ui-gray-200, color-mix(in srgb, $black, white 62.75%) ); // #a0a0a0
+$gray-300: var(--swagger-ui-gray-300, color-mix(in srgb, $black, white 56.5%) ); // #909090
+$gray-400: var(--swagger-ui-gray-400, color-mix(in srgb, $black, white 50%) ); // #808080
+$gray-500: var(--swagger-ui-gray-500, color-mix(in srgb, $black, white 43.75%) ); // #707070
+$gray-600: var(--swagger-ui-gray-600, color-mix(in srgb, $black, white 37.5%) ); // #606060
+$gray-650: var(--swagger-ui-gray-650, color-mix(in srgb, $black, white 33.3%) ); // #555555
+$gray-700: var(--swagger-ui-gray-700, color-mix(in srgb, $black, white 31.25%) ); // #505050
+$gray-800: var(--swagger-ui-gray-800, color-mix(in srgb, $black, white 25%) ); // #404040
+$gray-900: var(--swagger-ui-gray-900, color-mix(in srgb, $black, white 18.75%) ); // #303030
+
+$cod-gray: var(--swagger-ui-cod-gray, #1b1b1b );
+$agate-gray: var(--swagger-ui-agate-gray, #333333 );
+$bright-gray: var(--swagger-ui-bright-gray, #3b4151 );
+$mako-gray: var(--swagger-ui-mako-gray, #41444e );
+$waterloo-gray: var(--swagger-ui-waterloo-gray, #7d8492 );
+$alto-gray: var(--swagger-ui-alto-gray, #d9d9d9 );
+$mercury-gray: var(--swagger-ui-mercury-gray, #e4e4e4 );
+$concrete-gray: var(--swagger-ui-concrete-gray, #e8e8e8 );
+$alabaster: var(--swagger-ui-alabaster, #f7f7f7 );
+$apple-green: var(--swagger-ui-apple-green, #62a03f );
+$green-haze: var(--swagger-ui-green-haze, #009d77 );
+$japanese-laurel: var(--swagger-ui-japanese-laurel, #008000 );
+$persian-green: var(--swagger-ui-persian-green, #00a0a7 );
+$geyser-blue: var(--swagger-ui-geyser-blue, #d8dde7 );
+$dodger-blue: var(--swagger-ui-dodger-blue, #1391ff );
+$endeavour-blue: var(--swagger-ui-endeavour-blue, #005dae );
+$scampi-purple: var(--swagger-ui-scampi-purple, #55a );
+$electric-violet: var(--swagger-ui-electric-violet, #7300e5 );
+$persian-red: var(--swagger-ui-persian-red, #cf3030 );
+$mango-tango: var(--swagger-ui-mango-tango, #e97500 );
+
 // Theme
-$color-primary: var(--swagger-ui-color-primary, #89bf04);
-$color-secondary: var(--swagger-ui-color-secondary, #9012fe);
-$color-info: var(--swagger-ui-color-info, #4990e2);
-$color-warning: var(--swagger-ui-color-warning, #ff6060);
-$color-danger: var(--swagger-ui-color-danger, #f00);
-$color-primary-hover: var(--swagger-ui-color-primary-hover, #d0fc65);
-$_color-post: var(--swagger-ui-color-method-post, #49cc90);
-$_color-get: var(--swagger-ui-color-method-get, #61affe);
-$_color-put: var(--swagger-ui-color-method-put, #fca130);
-$_color-delete: var(--swagger-ui-color-method-delete, #f93e3e);
-$_color-head: var(--swagger-ui-color-method-head, #9012fe);
-$_color-patch: var(--swagger-ui-color-method-patch, #50e3c2);
-$_color-disabled: var(--swagger-ui-color-method-disabled, #ebebeb);
-$_color-options: var(--swagger-ui-color-method-options, #0d5aa7);
+
+$color-primary: var(--swagger-ui-color-primary, #89bf04 );
+$color-secondary: var(--swagger-ui-color-secondary, #9012fe );
+$color-info: var(--swagger-ui-color-info, #4990e2 );
+$color-warning: var(--swagger-ui-color-warning, #ff6060 );
+$color-danger: var(--swagger-ui-color-danger, #f00 );
+
+$color-primary-hover: var(--swagger-ui-color-primary-hover, color-mix(in srgb, $color-primary, white .5%) );
+
+$_color-post: var(--swagger-ui-_color-post, #49cc90 );
+$_color-get: var(--swagger-ui-_color-get, #61affe );
+$_color-put: var(--swagger-ui-_color-put, #fca130 );
+$_color-delete: var(--swagger-ui-_color-delete, #f93e3e );
+$_color-head: var(--swagger-ui-_color-head, #9012fe );
+$_color-patch: var(--swagger-ui-_color-patch, #50e3c2 );
+$_color-disabled: var(--swagger-ui-_color-disabled, #ebebeb );
+$_color-options: var(--swagger-ui-_color-options, #0d5aa7 );
 
 // Authorize
 
-$auth-container-border-color: var(
-  --swagger-ui-auth-container-border-color,
-  $gray-50
-);
-$auth-select-all-none-link-font-color: var(
-  --swagger-ui-auth-select-all-none-link-font-color,
-  $color-info
-);
+$auth-container-border-color: var(--swagger-ui-auth-container-border-color, $gray-50 );
+$auth-select-all-none-link-font-color: var(--swagger-ui-auth-select-all-none-link-font-color, $color-info );
 // Buttons
 
-$btn-background-color: var(--swagger-ui-btn-background-color, transparent);
-$btn-border-color: var(--swagger-ui-btn-border-color, $gray-400);
-$btn-font-color: var(--swagger-ui-btn-font-color, inherit);
-$btn-box-shadow-color: var(--swagger-ui-btn-box-shadow-color, $black);
+$btn-background-color: var(--swagger-ui-btn-background-color, transparent );
+$btn-border-color: var(--swagger-ui-btn-border-color, $gray-400 );
+$btn-font-color: var(--swagger-ui-btn-font-color, inherit );
+$btn-box-shadow-color: var(--swagger-ui-btn-box-shadow-color, $black );
 
-$btn-authorize-background-color: var(
-  --swagger-ui-btn-authorize-background-color,
-  transparent
-);
-$btn-authorize-border-color: var(
-  --swagger-ui-btn-authorize-border-color,
-  $_color-post
-);
-$btn-authorize-font-color: var(
-  --swagger-ui-btn-authorize-font-color,
-  $_color-post
-);
-$btn-authorize-svg-fill-color: var(
-  --swagger-ui-btn-authorize-svg-fill-color,
-  $_color-post
-);
+$btn-authorize-background-color: var(--swagger-ui-btn-authorize-background-color, transparent );
+$btn-authorize-border-color: var(--swagger-ui-btn-authorize-border-color, $_color-post );
+$btn-authorize-font-color: var(--swagger-ui-btn-authorize-font-color, $_color-post );
+$btn-authorize-svg-fill-color: var(--swagger-ui-btn-authorize-svg-fill-color, $_color-post );
 
-$btn-cancel-background-color: var(
-  --swagger-ui-btn-cancel-background-color,
-  transparent
-);
-$btn-cancel-border-color: var(
-  --swagger-ui-btn-cancel-border-color,
-  $color-warning
-);
-$btn-cancel-font-color: var(--swagger-ui-btn-cancel-font-color, $color-warning);
+$btn-cancel-background-color: var(--swagger-ui-btn-cancel-background-color, transparent );
+$btn-cancel-border-color: var(--swagger-ui-btn-cancel-border-color, $color-warning );
+$btn-cancel-font-color: var(--swagger-ui-btn-cancel-font-color, $color-warning );
 
-$btn-execute-background-color: var(
-  --swagger-ui-btn-execute-background-color,
-  transparent
-);
-$btn-execute-border-color: var(
-  --swagger-ui-btn-execute-border-color,
-  $color-info
-);
-$btn-execute-font-color: var(--swagger-ui-btn-execute-font-color, $white);
-$btn-execute-background-color-alt: var(
-  --swagger-ui-btn-execute-background-color-alt,
-  $color-info
-);
+$btn-execute-background-color: var(--swagger-ui-btn-execute-background-color, transparent );
+$btn-execute-border-color: var(--swagger-ui-btn-execute-border-color, $color-info );
+$btn-execute-font-color: var(--swagger-ui-btn-execute-font-color, $white );
+$btn-execute-background-color-alt: var(--swagger-ui-btn-execute-background-color-alt, $color-info );
 
-$expand-methods-svg-fill-color: var(
-  --swagger-ui-expand-methods-svg-fill-color,
-  $gray-500
-);
-$expand-methods-svg-fill-color-hover: var(
-  --swagger-ui-expand-methods-svg-fill-color-hover,
-  $gray-800
-);
+$expand-methods-svg-fill-color: var(--swagger-ui-expand-methods-svg-fill-color, $gray-500 );
+$expand-methods-svg-fill-color-hover: var(--swagger-ui-expand-methods-svg-fill-color-hover, $gray-800 );
 
 // Errors
 
-$errors-wrapper-background-color: var(
-  --swagger-ui-errors-wrapper-background-color,
-  $_color-delete
-);
-$errors-wrapper-border-color: var(
-  --swagger-ui-errors-wrapper-border-color,
-  $_color-delete
-);
+$errors-wrapper-background-color: var(--swagger-ui-errors-wrapper-background-color, $_color-delete );
+$errors-wrapper-border-color: var(--swagger-ui-errors-wrapper-border-color, $_color-delete );
 
-$errors-wrapper-errors-small-font-color: var(
-  --swagger-ui-errors-wrapper-errors-small-font-color,
-  $gray-600
-);
+$errors-wrapper-errors-small-font-color: var(--swagger-ui-errors-wrapper-errors-small-font-color, $gray-600 );
 
 // Form
 
-$form-select-background-color: var(
-  --swagger-ui-form-select-background-color,
-  $alabaster
-);
-$form-select-border-color: var(
-  --swagger-ui-form-select-border-color,
-  $mako-gray
-);
-$form-select-box-shadow-color: var(
-  --swagger-ui-form-select-box-shadow-color,
-  $black
-);
+$form-select-background-color: var(--swagger-ui-form-select-background-color, $alabaster );
+$form-select-border-color: var(--swagger-ui-form-select-border-color, $mako-gray );
+$form-select-box-shadow-color: var(--swagger-ui-form-select-box-shadow-color, $black );
 
-$form-input-border-color: var(--swagger-ui-form-input-border-color, $alto-gray);
-$form-input-background-color: var(
-  --swagger-ui-form-input-background-color,
-  $white
-);
+$form-input-border-color: var(--swagger-ui-form-input-border-color, $alto-gray );
+$form-input-background-color: var(--swagger-ui-form-input-background-color, $white );
 
-$form-textarea-background-color: var(
-  --swagger-ui-form-textarea-background-color,
-  $white
-);
-$form-textarea-focus-border-color: var(
-  --swagger-ui-form-textarea-focus-border-color,
-  $_color-get
-);
+$form-textarea-background-color: var(--swagger-ui-form-textarea-background-color, $white );
+$form-textarea-focus-border-color: var(--swagger-ui-form-textarea-focus-border-color, $_color-get );
 
-$form-textarea-curl-background-color: var(
-  --swagger-ui-form-textarea-curl-background-color,
-  $mako-gray
-);
-$form-textarea-curl-font-color: var(
-  --swagger-ui-form-textarea-curl-font-color,
-  $white
-);
+$form-textarea-curl-background-color: var(--swagger-ui-form-textarea-curl-background-color, $mako-gray );
+$form-textarea-curl-font-color: var(--swagger-ui-form-textarea-curl-font-color, $white );
 
-$form-checkbox-label-font-color: var(
-  --swagger-ui-form-checkbox-label-font-color,
-  $gray-900
-);
-$form-checkbox-background-color: var(
-  --swagger-ui-form-checkbox-background-color,
-  $concrete-gray
-);
-$form-checkbox-box-shadow-color: var(
-  --swagger-ui-form-checkbox-box-shadow-color,
-  $concrete-gray
-);
+$form-checkbox-label-font-color: var(--swagger-ui-form-checkbox-label-font-color, $gray-900 );
+$form-checkbox-background-color: var(--swagger-ui-form-checkbox-background-color, $concrete-gray );
+$form-checkbox-box-shadow-color: var(--swagger-ui-form-checkbox-box-shadow-color, $concrete-gray );
 
 // Information
 
-$info-code-background-color: var(
-  --swagger-ui-info-code-background-color,
-  $black
-);
-$info-code-font-color: var(--swagger-ui-info-code-font-color, $_color-head);
+$info-code-background-color: var(--swagger-ui-info-code-background-color, $black );
+$info-code-font-color: var(--swagger-ui-info-code-font-color, $_color-head );
 
-$info-link-font-color: var(--swagger-ui-info-link-font-color, $color-info);
-$info-link-font-color-hover: var(
-  --swagger-ui-info-link-font-color-hover,
-  $info-link-font-color
-);
+$info-link-font-color: var(--swagger-ui-info-link-font-color, $color-info );
+$info-link-font-color-hover: var(--swagger-ui-info-link-font-color-hover, $info-link-font-color );
 
-$info-title-small-background-color: var(
-  --swagger-ui-info-title-small-background-color,
-  $waterloo-gray
-);
+$info-title-small-background-color: var(--swagger-ui-info-title-small-background-color, $waterloo-gray );
 
-$info-title-small-pre-font-color: var(
-  --swagger-ui-info-title-small-pre-font-color,
-  $white
-);
+$info-title-small-pre-font-color: var(--swagger-ui-info-title-small-pre-font-color, $white );
 
 // Layout
 
-$opblock-border-color: var(--swagger-ui-opblock-border-color, $black);
-$opblock-box-shadow-color: var(--swagger-ui-opblock-box-shadow-color, $black);
+$opblock-border-color: var(--swagger-ui-opblock-border-color, $black );
+$opblock-box-shadow-color: var(--swagger-ui-opblock-box-shadow-color, $black );
 
-$opblock-tag-border-bottom-color: var(
-  --swagger-ui-opblock-tag-border-bottom-color,
-  $bright-gray
-);
-$opblock-tag-background-color-hover: var(
-  --swagger-ui-opblock-tag-background-color-hover,
-  $black
-);
+$opblock-tag-border-bottom-color: var(--swagger-ui-opblock-tag-border-bottom-color, $bright-gray );
+$opblock-tag-background-color-hover: var(--swagger-ui-opblock-tag-background-color-hover, $black );
 
-$opblock-tab-header-tab-item-active-h4-span-after-background-color: var(
-  --swagger-ui-opblock-tab-header-tab-item-active-h4-span-after-background-color,
-  $gray-400
-);
+$opblock-tab-header-tab-item-active-h4-span-after-background-color: var(--swagger-ui-opblock-tab-header-tab-item-active-h4-span-after-background-color, $gray-400 );
 
-$opblock-isopen-summary-border-bottom-color: var(
-  --swagger-ui-opblock-isopen-summary-border-bottom-color,
-  $black
-);
+$opblock-isopen-summary-border-bottom-color: var(--swagger-ui-opblock-isopen-summary-border-bottom-color, $black );
 
-$opblock-isopen-section-header-background-color: var(
-  --swagger-ui-opblock-isopen-section-header-background-color,
-  $white
-);
-$opblock-isopen-section-header-box-shadow-color: var(
-  --swagger-ui-opblock-isopen-section-header-box-shadow-color,
-  $black
-);
+$opblock-isopen-section-header-background-color: var(--swagger-ui-opblock-isopen-section-header-background-color, $white );
+$opblock-isopen-section-header-box-shadow-color: var(--swagger-ui-opblock-isopen-section-header-box-shadow-color, $black );
 
-$opblock-summary-method-background-color: var(
-  --swagger-ui-opblock-summary-method-background-color,
-  $black
-);
-$opblock-summary-method-font-color: var(
-  --swagger-ui-opblock-summary-method-font-color,
-  $white
-);
-$opblock-summary-method-text-shadow-color: var(
-  --swagger-ui-opblock-summary-method-text-shadow-color,
-  $black
-);
+$opblock-summary-method-background-color: var(--swagger-ui-opblock-summary-method-background-color, $black );
+$opblock-summary-method-font-color: var(--swagger-ui-opblock-summary-method-font-color, $white );
+$opblock-summary-method-text-shadow-color: var(--swagger-ui-opblock-summary-method-text-shadow-color, $black );
 
-$operational-filter-input-border-color: var(
-  --swagger-ui-operational-filter-input-border-color,
-  $geyser-blue
-);
+$operational-filter-input-border-color: var(--swagger-ui-operational-filter-input-border-color, $geyser-blue );
 
-$tab-list-item-first-background-color: var(
-  --swagger-ui-tab-list-item-first-background-color,
-  $black
-);
+$tab-list-item-first-background-color: var(--swagger-ui-tab-list-item-first-background-color, $black );
 
-$response-col-status-undocumented-font-color: var(
-  --swagger-ui-response-col-status-undocumented-font-color,
-  $gray-300
-);
+$response-col-status-undocumented-font-color: var(--swagger-ui-response-col-status-undocumented-font-color, $gray-300 );
 
-$response-col-links-font-color: var(
-  --swagger-ui-response-col-links-font-color,
-  $gray-300
-);
+$response-col-links-font-color: var(--swagger-ui-response-col-links-font-color, $gray-300 );
 
-$opblock-body-background-color: var(
-  --swagger-ui-opblock-body-background-color,
-  $agate-gray
-);
-$opblock-body-font-color: var(--swagger-ui-opblock-body-font-color, $white);
+$opblock-body-background-color: var(--swagger-ui-opblock-body-background-color, $agate-gray );
+$opblock-body-font-color: var(--swagger-ui-opblock-body-font-color, $white );
 
-$scheme-container-background-color: var(
-  --swagger-ui-scheme-container-background-color,
-  $white
-);
-$scheme-container-box-shadow-color: var(
-  --swagger-ui-scheme-container-box-shadow-color,
-  $black
-);
+$scheme-container-background-color: var(--swagger-ui-scheme-container-background-color, $white );
+$scheme-container-box-shadow-color: var(--swagger-ui-scheme-container-box-shadow-color, $black );
 
-$server-container-background-color: var(
-  --swagger-ui-server-container-background-color,
-  $white
-);
-$server-container-box-shadow-color: var(
-  --swagger-ui-server-container-box-shadow-color,
-  $black
-);
+$server-container-background-color: var(--swagger-ui-server-container-background-color, $white );
+$server-container-box-shadow-color: var(--swagger-ui-server-container-box-shadow-color, $black );
 
-$server-container-computed-url-code-font-color: var(
-  --swagger-ui-server-container-computed-url-code-font-color,
-  $gray-400
-);
+$server-container-computed-url-code-font-color: var(--swagger-ui-server-container-computed-url-code-font-color, $gray-400 );
 
-$loading-container-before-border-color: var(
-  --swagger-ui-loading-container-before-border-color,
-  $gray-650
-);
-$loading-container-before-border-top-color: var(
-  --swagger-ui-loading-container-before-border-top-color,
-  $black
-);
+$loading-container-before-border-color: var(--swagger-ui-loading-container-before-border-color, $gray-650 );
+$loading-container-before-border-top-color: var(--swagger-ui-loading-container-before-border-top-color, $black );
 
-$response-content-type-controls-accept-header-select-border-color: var(
-  --swagger-ui-response-content-type-controls-accept-header-select-border-color,
-  $japanese-laurel
-);
-$response-content-type-controls-accept-header-small-font-color: var(
-  --swagger-ui-response-content-type-controls-accept-header-small-font-color,
-  $japanese-laurel
-);
+$response-content-type-controls-accept-header-select-border-color: var(--swagger-ui-response-content-type-controls-accept-header-select-border-color, $japanese-laurel );
+$response-content-type-controls-accept-header-small-font-color: var(--swagger-ui-response-content-type-controls-accept-header-small-font-color, $japanese-laurel );
 
 // Modal
 
-$dialog-ux-backdrop-background-color: var(
-  --swagger-ui-dialog-ux-backdrop-background-color,
-  $black
-);
+$dialog-ux-backdrop-background-color: var(--swagger-ui-dialog-ux-backdrop-background-color, $black );
 
-$dialog-ux-modal-background-color: var(
-  --swagger-ui-dialog-ux-modal-background-color,
-  $white
-);
-$dialog-ux-modal-border-color: var(
-  --swagger-ui-dialog-ux-modal-border-color,
-  $gray-50
-);
-$dialog-ux-modal-box-shadow-color: var(
-  --swagger-ui-dialog-ux-modal-box-shadow-color,
-  $black
-);
 
-$dialog-ux-modal-content-font-color: var(
-  --swagger-ui-dialog-ux-modal-content-font-color,
-  $mako-gray
-);
+$dialog-ux-modal-background-color: var(--swagger-ui-dialog-ux-modal-background-color, $white );
+$dialog-ux-modal-border-color: var(--swagger-ui-dialog-ux-modal-border-color, $gray-50 );
+$dialog-ux-modal-box-shadow-color: var(--swagger-ui-dialog-ux-modal-box-shadow-color, $black );
 
-$dialog-ux-modal-header-border-bottom-color: var(
-  --swagger-ui-dialog-ux-modal-header-border-bottom-color,
-  $gray-50
-);
+$dialog-ux-modal-content-font-color: var(--swagger-ui-dialog-ux-modal-content-font-color, $mako-gray );
+
+$dialog-ux-modal-header-border-bottom-color: var(--swagger-ui-dialog-ux-modal-header-border-bottom-color, $gray-50 );
 
 // Models
 
-$model-deprecated-font-color: var(
-  --swagger-ui-model-deprecated-font-color,
-  $gray-200
-);
+$model-deprecated-font-color: var(--swagger-ui-model-deprecated-font-color, $gray-200 );
 
-$model-hint-font-color: var(--swagger-ui-model-hint-font-color, $gray-50);
-$model-hint-background-color: var(
-  --swagger-ui-model-hint-background-color,
-  $black
-);
+$model-hint-font-color: var(--swagger-ui-model-hint-font-color, $gray-50 );
+$model-hint-background-color: var(--swagger-ui-model-hint-background-color, $black );
 
-$section-models-border-color: var(
-  --swagger-ui-section-models-border-color,
-  $bright-gray
-);
+$section-models-border-color: var(--swagger-ui-section-models-border-color, $bright-gray );
 
-$section-models-isopen-h4-border-bottom-color: var(
-  --swagger-ui-section-models-isopen-h4-border-bottom-color,
-  $section-models-border-color
-);
+$section-models-isopen-h4-border-bottom-color: var(--swagger-ui-section-models-isopen-h4-border-bottom-color, $section-models-border-color );
 
-$section-models-h4-font-color: var(
-  --swagger-ui-section-models-h4-font-color,
-  $gray-600
-);
-$section-models-h4-background-color-hover: var(
-  --swagger-ui-section-models-h4-background-color-hover,
-  $black
-);
+$section-models-h4-font-color: var(--swagger-ui-section-models-h4-font-color, $gray-600 );
+$section-models-h4-background-color-hover: var(--swagger-ui-section-models-h4-background-color-hover, $black );
 
-$section-models-h5-font-color: var(
-  --swagger-ui-section-models-h5-font-color,
-  $gray-500
-);
+$section-models-h5-font-color: var(--swagger-ui-section-models-h5-font-color, $gray-500 );
 
-$section-models-model-container-background-color: var(
-  --swagger-ui-section-models-model-container-background-color,
-  $black
-);
+$section-models-model-container-background-color: var(--swagger-ui-section-models-model-container-background-color, $black );
 
-$section-models-model-box-background-color: var(
-  --swagger-ui-section-models-model-box-background-color,
-  $black
-);
+$section-models-model-box-background-color: var(--swagger-ui-section-models-model-box-background-color, $black );
 
-$section-models-model-title-font-color: var(
-  --swagger-ui-section-models-model-title-font-color,
-  $gray-700
-);
+$section-models-model-title-font-color: var(--swagger-ui-section-models-model-title-font-color, $gray-700 );
 
-$prop-type-font-color: var(--swagger-ui-prop-type-font-color, $scampi-purple);
+$prop-type-font-color: var(--swagger-ui-prop-type-font-color, $scampi-purple );
 
-$prop-format-font-color: var(--swagger-ui-prop-format-font-color, $gray-600);
+$prop-format-font-color: var(--swagger-ui-prop-format-font-color, $gray-600 );
 
 // Tables
 
-$table-thead-td-border-bottom-color: var(
-  --swagger-ui-table-thead-td-border-bottom-color,
-  $bright-gray
-);
+$table-thead-td-border-bottom-color: var(--swagger-ui-table-thead-td-border-bottom-color, $bright-gray );
 
-$table-parameter-name-required-font-color: var(
-  --swagger-ui-table-parameter-name-required-font-color,
-  $color-danger
-);
+$table-parameter-name-required-font-color: var(--swagger-ui-table-parameter-name-required-font-color, $color-danger );
 
-$table-parameter-in-font-color: var(
-  --swagger-ui-table-parameter-in-font-color,
-  $gray-400
-);
+$table-parameter-in-font-color: var(--swagger-ui-table-parameter-in-font-color, $gray-400 );
 
-$table-parameter-deprecated-font-color: var(
-  --swagger-ui-table-parameter-deprecated-font-color,
-  $color-danger
-);
+$table-parameter-deprecated-font-color: var(--swagger-ui-table-parameter-deprecated-font-color, $color-danger );
 
 // Topbar
 
-$topbar-background-color: var(--swagger-ui-topbar-background-color, $cod-gray);
+$topbar-background-color: var(--swagger-ui-topbar-background-color, $cod-gray );
 
-$topbar-link-font-color: var(--swagger-ui-topbar-link-font-color, $white);
+$topbar-link-font-color: var(--swagger-ui-topbar-link-font-color, $white );
 
-$topbar-download-url-wrapper-element-border-color: var(
-  --swagger-ui-topbar-download-url-wrapper-element-border-color,
-  $apple-green
-);
+$topbar-download-url-wrapper-element-border-color: var(--swagger-ui-topbar-download-url-wrapper-element-border-color, $apple-green );
 
-$topbar-download-url-button-background-color: var(
-  --swagger-ui-topbar-download-url-button-background-color,
-  $apple-green
-);
-$topbar-download-url-button-font-color: var(
-  --swagger-ui-topbar-download-url-button-font-color,
-  $white
-);
+$topbar-download-url-button-background-color: var(--swagger-ui-topbar-download-url-button-background-color, $apple-green );
+$topbar-download-url-button-font-color: var(--swagger-ui-topbar-download-url-button-font-color, $white );
 
 // Type
 
-$text-body-default-font-color: var(
-  --swagger-ui-text-body-default-font-color,
-  $bright-gray
-);
-$text-code-default-font-color: var(
-  --swagger-ui-text-code-default-font-color,
-  $bright-gray
-);
-$text-headline-default-font-color: var(
-  --swagger-ui-text-headline-default-font-color,
-  $bright-gray
-);
-
+$text-body-default-font-color: var(--swagger-ui-text-body-default-font-color, $bright-gray );
+$text-code-default-font-color: var(--swagger-ui-text-code-default-font-color, $bright-gray );
+$text-headline-default-font-color: var(--swagger-ui-text-headline-default-font-color, $bright-gray );
 @import "./upstream/src/style/main";

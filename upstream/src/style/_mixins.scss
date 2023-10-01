@@ -169,5 +169,5 @@ $browser-context: 16;
 @mixin invalidFormElement() {
     animation: shake .4s 1;
     border-color: $_color-delete;
-    background: color-mix(in srgb, $_color-delete, white 5%);
+    background: color-mix(in srgb, $_color-delete, white 35%);
 }

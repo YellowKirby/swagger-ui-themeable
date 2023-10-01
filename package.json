@@ -13,6 +13,7 @@
   ],
   "exports": {
     ".": "./dist/swagger-ui.css",
+    "swagger-ui.css": "./dist/swagger-ui.css",
     "./*": "./dist/scss/*"
   },
   "devDependencies": {

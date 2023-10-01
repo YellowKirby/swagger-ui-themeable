@@ -44,7 +44,7 @@
 
         &:hover
         {
-            color: color-mix(in srgb, $info-link-font-color-hover, black 5%);
+            color: color-mix(in srgb, $info-link-font-color-hover, black 15%);
         }
     }
     > div

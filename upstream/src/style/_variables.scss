@@ -1,16 +1,16 @@
 // Base Colours
 $black: #000 !default;
 $white: #fff !default;
-$gray-50: color-mix(in srgb, $black, white 2%) !default; //ebebeb
-$gray-200: color-mix(in srgb, $black, white 2.75%) !default; // #a0a0a0
-$gray-300: color-mix(in srgb, $black, white 6.5%) !default; // #909090
-$gray-400: color-mix(in srgb, $black, white 0%) !default; // #808080
-$gray-500: color-mix(in srgb, $black, white 3.75%) !default; // #707070
-$gray-600: color-mix(in srgb, $black, white 7.5%) !default; // #606060
-$gray-650: color-mix(in srgb, $black, white 3.3%) !default; // #555555
-$gray-700: color-mix(in srgb, $black, white 1.25%) !default; // #505050
-$gray-800: color-mix(in srgb, $black, white 5%) !default; // #404040
-$gray-900: color-mix(in srgb, $black, white 8.75%) !default; // #303030
+$gray-50: color-mix(in srgb, $black, white 92%) !default; //ebebeb
+$gray-200: color-mix(in srgb, $black, white 62.75%) !default; // #a0a0a0
+$gray-300: color-mix(in srgb, $black, white 56.5%) !default; // #909090
+$gray-400: color-mix(in srgb, $black, white 50%) !default; // #808080
+$gray-500: color-mix(in srgb, $black, white 43.75%) !default; // #707070
+$gray-600: color-mix(in srgb, $black, white 37.5%) !default; // #606060
+$gray-650: color-mix(in srgb, $black, white 33.3%) !default; // #555555
+$gray-700: color-mix(in srgb, $black, white 31.25%) !default; // #505050
+$gray-800: color-mix(in srgb, $black, white 25%) !default; // #404040
+$gray-900: color-mix(in srgb, $black, white 18.75%) !default; // #303030
 
 $cod-gray: #1b1b1b !default;
 $agate-gray: #333333 !default;
@@ -41,7 +41,7 @@ $color-info: #4990e2 !default;
 $color-warning: #ff6060 !default;
 $color-danger: #f00 !default;
 
-$color-primary-hover: color-mix(in srgb, $color-primary, white 5%) !default;
+$color-primary-hover: color-mix(in srgb, $color-primary, white .5%) !default;
 
 $_color-post: #49cc90 !default;
 $_color-get: #61affe !default;
