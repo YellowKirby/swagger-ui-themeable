@@ -4,6 +4,9 @@ A rebuild of [Swagger UI's](https://github.com/swagger-api/swagger-ui) default s
 
 ## Caveats
 
+> [!WARNING]
+> Consider this package a proof-of-concept that may break or be unsupported at any time. If you find this package useful please consider leaving a comment in https://github.com/YellowKirby/swagger-ui-themeable/issues/1.
+
 This package attempts to make as few changes as possible to the upstream stylesheet. Ideally this means it's a safe drop-in replacement, but also has a few drawbacks:
 - **Stability**: Variable names are automatically generated and may be changed or removed between different versions. See issue https://github.com/YellowKirby/swagger-ui-themeable/issues/1.
 - **Browser Support**: Some SASS features (such as `lighten()`) don't work with CSS variables. These have been replaced with [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix), and should be fairly equivalent but require [a recent version of most browsers](https://caniuse.com/?search=color-mix) to work correctly.
