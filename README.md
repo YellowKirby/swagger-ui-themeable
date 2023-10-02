@@ -1,6 +1,6 @@
 # swagger-ui-themeable
 
-A rebuild of [Swagger UI's](https://github.com/swagger-api/swagger-ui) default stylesheet that exposes CSS and/or SASS variables to better support custom themes.
+A rebuild of [Swagger UI's](https://github.com/swagger-api/swagger-ui) default stylesheet that uses [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to better support custom themes.
 
 ## Caveats
 
@@ -8,6 +8,7 @@ A rebuild of [Swagger UI's](https://github.com/swagger-api/swagger-ui) default s
 > Consider this package a proof-of-concept that may break or be unsupported at any time. If you find this package useful please consider leaving a comment in https://github.com/YellowKirby/swagger-ui-themeable/issues/1.
 
 This package attempts to make as few changes as possible to the upstream stylesheet. Ideally this means it's a safe drop-in replacement, but also has a few drawbacks:
+
 - **Stability**: Variable names are automatically generated and may be changed or removed between different versions. See issue https://github.com/YellowKirby/swagger-ui-themeable/issues/1.
 - **Browser Support**: Some SASS features (such as `lighten()`) don't work with CSS variables. These have been replaced with [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix), and should be fairly equivalent but require [a recent version of most browsers](https://caniuse.com/?search=color-mix) to work correctly.
 
@@ -16,23 +17,20 @@ This package attempts to make as few changes as possible to the upstream stylesh
 Install with your favorite package manager
 
 ```sh
-npm i swagger-ui-themeable
+npm i @goattech/swagger-ui-themeable
 ```
-
-### [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 Replace any import of the default Swagger UI CSS file with an import of this package:
 
 ```diff
 // example JS import with swagger-ui-react
 - import "swagger-ui-react/swagger-ui.css"
-+ import "swagger-ui-themeable/swagger-ui.css"
++ import "@goattech/swagger-ui-themeable/swagger-ui.css"
 
 // example CSS import
 - @import "swagger-ui/swagger-ui.css"
-+ @import "swagger-ui-themeable/swagger-ui.css"
++ @import "@goattech/swagger-ui-themeable/swagger-ui.css"
 ```
-
 
 Then define values for any of the CSS variables:
 
@@ -55,19 +53,11 @@ Then define values for any of the CSS variables:
 }
 ```
 
-### SASS Variables
-
-You can also use SASS variables instead, which will result in a smaller filesize but the values can't be changed dynamically at runtime.
-
-```scss
-@use "~swagger-ui-themeable/sass" with (
-    $color-primary: red,
-    $color-secondary: orange,
-    $color-info: yellow,
-    $color-warning: green,
-    $color-danger: blue
-)
-```
-
 ### What variables can be defined?
-See the full list [here](./main.scss). Use the `--swagger-ui-` names if you're configuring with CSS variables, and the `$var` names if you're configuring in SASS
+
+See the full list [here](./main.scss). Provide any/all values for the `--swagger-ui-` variable names.
+
+## Development
+
+- [`./generate.sh`](./generate.sh) will fetch the latest `master` commit of upstream `swagger-ui` and run some `sed` replacements to define CSS variables. Currently this `gsed` (`gnu-sed`) that can be installed with `brew install gnu-sed` on OSX. Sorry other OS folks :(
+- `npm run build` will package it up
