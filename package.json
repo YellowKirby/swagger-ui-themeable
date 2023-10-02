@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +13,7 @@
   ],
   "exports": {
     ".": "./dist/swagger-ui.css",
-    "swagger-ui.css": "./dist/swagger-ui.css",
+    "./swagger-ui.css": "./dist/swagger-ui.css",
     "./*": "./dist/scss/*"
   },
   "devDependencies": {

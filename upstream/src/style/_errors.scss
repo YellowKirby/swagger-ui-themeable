@@ -7,7 +7,7 @@
 
     border: 2px solid $_color-delete;
     border-radius: 4px;
-    background: color-mix(in srgb, $_color-delete 1%, transparent);
+    background: color-mix(in srgb, $_color-delete calc(.1 * 100%), transparent);
 
     .error-wrapper
     {

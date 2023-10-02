@@ -33,18 +33,18 @@
     cursor: pointer;
     transition: all .2s;
 
-    border-bottom: 1px solid color-mix(in srgb, $opblock-tag-border-bottom-color 3%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, $opblock-tag-border-bottom-color calc(.3 * 100%), transparent);
 
     &:hover
     {
-        background: color-mix(in srgb, $opblock-tag-background-color-hover 02%, transparent);
+        background: color-mix(in srgb, $opblock-tag-background-color-hover calc(.02 * 100%), transparent);
     }
 }
 
 @mixin method($color)
 {
     border-color: $color;
-    background: color-mix(in srgb, $color 1%, transparent);
+    background: color-mix(in srgb, $color calc(.1 * 100%), transparent);
 
     .opblock-summary-method
     {
@@ -202,7 +202,7 @@
 
     border: 1px solid $opblock-border-color;
     border-radius: 4px;
-    box-shadow: 0 0 3px color-mix(in srgb, $opblock-box-shadow-color 19%, transparent);
+    box-shadow: 0 0 3px color-mix(in srgb, $opblock-box-shadow-color calc(.19 * 100%), transparent);
 
     .tab-header
     {
@@ -267,8 +267,8 @@
 
         min-height: 50px;
 
-        background: color-mix(in srgb, $opblock-isopen-section-header-background-color 8%, transparent);
-        box-shadow: 0 1px 2px color-mix(in srgb, $opblock-isopen-section-header-box-shadow-color 1%, transparent);
+        background: color-mix(in srgb, $opblock-isopen-section-header-background-color calc(.8 * 100%), transparent);
+        box-shadow: 0 1px 2px color-mix(in srgb, $opblock-isopen-section-header-box-shadow-color calc(.1 * 100%), transparent);
 
         >label
         {
@@ -313,7 +313,7 @@
 
         border-radius: 3px;
         background: $opblock-summary-method-background-color;
-        text-shadow: 0 1px 0 color-mix(in srgb, $opblock-summary-method-text-shadow-color 1%, transparent);
+        text-shadow: 0 1px 0 color-mix(in srgb, $opblock-summary-method-text-shadow-color calc(.1 * 100%), transparent);
 
         @include text_headline($opblock-summary-method-font-color);
     }
@@ -530,7 +530,7 @@
 
                 content: '';
 
-                background: color-mix(in srgb, $tab-list-item-first-background-color 2%, transparent);
+                background: color-mix(in srgb, $tab-list-item-first-background-color calc(.2 * 100%), transparent);
             }
         }
 
@@ -766,7 +766,7 @@
     padding: 30px 0;
 
     background: $scheme-container-background-color;
-    box-shadow: 0 1px 2px 0 color-mix(in srgb, $scheme-container-box-shadow-color 15%, transparent);
+    box-shadow: 0 1px 2px 0 color-mix(in srgb, $scheme-container-box-shadow-color calc(.15 * 100%), transparent);
 
     .schemes
     {
@@ -842,8 +842,8 @@
             animation: rotation 1s infinite linear, opacity .5s;
 
             opacity: 1;
-            border: 2px solid color-mix(in srgb, $loading-container-before-border-color 1%, transparent);
-            border-top-color: color-mix(in srgb, $loading-container-before-border-top-color 6%, transparent);
+            border: 2px solid color-mix(in srgb, $loading-container-before-border-color calc(.1 * 100%), transparent);
+            border-top-color: color-mix(in srgb, $loading-container-before-border-top-color calc(.6 * 100%), transparent);
             border-radius: 100%;
 
             backface-visibility: hidden;
