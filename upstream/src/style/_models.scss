@@ -90,7 +90,7 @@
 
         color: $model-hint-font-color;
         border-radius: 4px;
-        background: color-mix(in srgb, $model-hint-background-color 7%, transparent);
+        background: color-mix(in srgb, $model-hint-background-color calc(.7 * 100%), transparent);
     }
 
     p
@@ -183,7 +183,7 @@ section.models
 {
     margin: 30px 0;
 
-    border: 1px solid color-mix(in srgb, $section-models-border-color 3%, transparent);
+    border: 1px solid color-mix(in srgb, $section-models-border-color calc(.3 * 100%), transparent);
     border-radius: 4px;
 
     .pointer
@@ -198,7 +198,7 @@ section.models
         {
             margin: 0 0 5px 0;
 
-            border-bottom: 1px solid color-mix(in srgb, $section-models-isopen-h4-border-bottom-color 3%, transparent);
+            border-bottom: 1px solid color-mix(in srgb, $section-models-isopen-h4-border-bottom-color calc(.3 * 100%), transparent);
         }
     }
     h4
@@ -228,7 +228,7 @@ section.models
 
         &:hover
         {
-            background: color-mix(in srgb, $section-models-h4-background-color-hover 02%, transparent);
+            background: color-mix(in srgb, $section-models-h4-background-color-hover calc(.02 * 100%), transparent);
         }
     }
 
@@ -255,11 +255,11 @@ section.models
         transition: all .5s;
 
         border-radius: 4px;
-        background: color-mix(in srgb, $section-models-model-container-background-color 05%, transparent);
+        background: color-mix(in srgb, $section-models-model-container-background-color calc(.05 * 100%), transparent);
 
         &:hover
         {
-            background: color-mix(in srgb, $section-models-model-container-background-color 07%, transparent);
+            background: color-mix(in srgb, $section-models-model-container-background-color calc(.07 * 100%), transparent);
         }
 
         &:first-of-type
@@ -293,7 +293,7 @@ section.models
     display: inline-block;
 
     border-radius: 4px;
-    background: color-mix(in srgb, $section-models-model-box-background-color 1%, transparent);
+    background: color-mix(in srgb, $section-models-model-box-background-color calc(.1 * 100%), transparent);
 
     .model-jump-to-path
     {

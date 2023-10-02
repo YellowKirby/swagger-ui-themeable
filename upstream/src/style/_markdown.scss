@@ -18,7 +18,7 @@
     padding: 5px 7px;
 
     border-radius: 4px;
-    background: color-mix(in srgb, $info-code-background-color 05%, transparent);
+    background: color-mix(in srgb, $info-code-background-color calc(.05 * 100%), transparent);
 
     @include text_code($info-code-font-color);
   }

@@ -9,7 +9,7 @@ select
     border-radius: 4px;
     background: $form-select-background-color url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13.418 7.859c.271-.268.709-.268.978 0 .27.268.272.701 0 .969l-3.908 3.83c-.27.268-.707.268-.979 0l-3.908-3.83c-.27-.267-.27-.701 0-.969.271-.268.709-.268.978 0L10 11l3.418-3.141z"/></svg>') right 10px center no-repeat;
     background-size: 20px;
-    box-shadow: 0 1px 2px 0 color-mix(in srgb, $form-select-box-shadow-color 25%, transparent);
+    box-shadow: 0 1px 2px 0 color-mix(in srgb, $form-select-box-shadow-color calc(.25 * 100%), transparent);
 
     @include text_headline();
     appearance: none;
@@ -147,7 +147,7 @@ textarea
     border: none;
     border-radius: 4px;
     outline: none;
-    background: color-mix(in srgb, $form-textarea-background-color 8%, transparent);
+    background: color-mix(in srgb, $form-textarea-background-color calc(.8 * 100%), transparent);
 
     @include text_code();
 

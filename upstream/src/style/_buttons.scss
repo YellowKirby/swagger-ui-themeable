@@ -10,7 +10,7 @@
   border: 2px solid $btn-border-color;
   border-radius: 4px;
   background: transparent;
-  box-shadow: 0 1px 2px color-mix(in srgb, $btn-box-shadow-color 1%, transparent);
+  box-shadow: 0 1px 2px color-mix(in srgb, $btn-box-shadow-color calc(.1 * 100%), transparent);
 
   @include text_headline();
 
@@ -29,7 +29,7 @@
 
   &:hover
   {
-    box-shadow: 0 0 5px color-mix(in srgb, $btn-box-shadow-color 3%, transparent);
+    box-shadow: 0 0 5px color-mix(in srgb, $btn-box-shadow-color calc(.3 * 100%), transparent);
   }
 
   &.cancel

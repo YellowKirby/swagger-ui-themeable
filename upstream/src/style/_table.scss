@@ -79,7 +79,7 @@ table
 
                 text-align: left;
 
-                border-bottom: 1px solid color-mix(in srgb, $table-thead-td-border-bottom-color 2%, transparent);
+                border-bottom: 1px solid color-mix(in srgb, $table-thead-td-border-bottom-color calc(.2 * 100%), transparent);
 
                 @include text_body();
             }
@@ -139,7 +139,7 @@ table
 
             content: 'required';
 
-            color: color-mix(in srgb, $table-parameter-name-required-font-color 6%, transparent);
+            color: color-mix(in srgb, $table-parameter-name-required-font-color calc(.6 * 100%), transparent);
         }
     }
 }

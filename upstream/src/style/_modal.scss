@@ -15,7 +15,7 @@
         bottom: 0;
         left: 0;
 
-        background: color-mix(in srgb, $dialog-ux-backdrop-background-color 8%, transparent);
+        background: color-mix(in srgb, $dialog-ux-backdrop-background-color calc(.8 * 100%), transparent);
     }
 
     .modal-ux
@@ -34,7 +34,7 @@
         border: 1px solid $dialog-ux-modal-border-color;
         border-radius: 4px;
         background: $dialog-ux-modal-background-color;
-        box-shadow: 0 10px 30px 0 color-mix(in srgb, $dialog-ux-modal-box-shadow-color 20%, transparent);
+        box-shadow: 0 10px 30px 0 color-mix(in srgb, $dialog-ux-modal-box-shadow-color calc(.20 * 100%), transparent);
     }
 
     .modal-ux-content

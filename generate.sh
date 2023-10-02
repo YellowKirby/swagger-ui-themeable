@@ -13,7 +13,7 @@ popd
 # SASS features like lighten() with dynamic values.
 replacements=(
   # replace rgba() with color-mix(base, transparent)
-  -e 's/rgba(\(.*\),\s*.\(.*\))/color-mix(in srgb, \1 \2%, transparent)/'
+  -e 's/rgba(\(.*\),\s*\(.*\))/color-mix(in srgb, \1 calc(\2 * 100%), transparent)/'
 
   # replace lighten() with color-mix(base, white)
   -e 's/lighten(\(.*\),\s*\(.*\))/color-mix(in srgb, \1, white \2)/'
