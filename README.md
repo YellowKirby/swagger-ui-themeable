@@ -59,5 +59,5 @@ See the full list [here](./main.scss). Provide any/all values for the `--swagger
 
 ## Development
 
-- [`./generate.sh`](./generate.sh) will fetch the latest `master` commit of upstream `swagger-ui` and run some `sed` replacements to define CSS variables. Currently this `gsed` (`gnu-sed`) that can be installed with `brew install gnu-sed` on OSX. Sorry other OS folks :(
-- `npm run build` will package it up
+- [`./generate.sh`](./generate.sh) will fetch the latest `master` commit of upstream `swagger-ui` and run some `sed` replacements to define CSS variables. Currently this requires `gsed` (`gnu-sed`) that can be installed with `brew install gnu-sed` on OSX. Sorry other OS folks :(
+- `npm run build` will package it up.
