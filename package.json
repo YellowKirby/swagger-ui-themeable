@@ -1,16 +1,29 @@
 {
-  "name": "swagger-ui-themeable",
+  "name": "@goattech/swagger-ui-themeable",
   "version": "0.1.0-beta",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "Rebuild of Swagger UI's CSS with support for CSS and SASS variables",
+  "contributors": [
+    "chase <1654019+YellowKirby@users.noreply.github.com>",
+    "Karl <109825260+karlwernsman@users.noreply.github.com>"
+  ],
+  "license": "Apache-2.0",
   "files": [
     "dist"
   ],
+  "keywords": [
+    "swagger",
+    "swagger-ui",
+    "theme",
+    "theming"
+  ],
+  "homepage": "https://github.com/YellowKirby/swagger-ui-themeable#readme",
+  "bugs": {
+    "url": "https://github.com/YellowKirby/swagger-ui-themeable/issues"
+  },
+  "main": "./dist/swagger-ui.css",
+  "scripts": {
+    "build": "webpack"
+  },
   "exports": {
     ".": "./dist/swagger-ui.css",
     "./swagger-ui.css": "./dist/swagger-ui.css",
