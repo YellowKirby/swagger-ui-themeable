@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/YellowKirby/swagger-ui-themeable/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/swagger-ui.css",
   "scripts": {
     "build": "webpack"
