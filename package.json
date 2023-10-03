@@ -1,6 +1,6 @@
 {
   "name": "@goattech/swagger-ui-themeable",
-  "version": "0.1.0-beta",
+  "version": "0.1.0-beta.0",
   "description": "Rebuild of Swagger UI's CSS with support for CSS custom properties",
   "contributors": [
     "chase <1654019+YellowKirby@users.noreply.github.com>",
